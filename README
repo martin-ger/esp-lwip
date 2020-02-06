@@ -19,6 +19,8 @@ Component config -> LWIP.
 In the code of your firmware enable NAPT for the softAP interface by calling 
 the ip_napt_enable function from lwipt_napt.h header file.
 
+See: https://github.com/jonask1337/esp-idf-nat-example for usage.
+
 ---
 
 INTRODUCTION
