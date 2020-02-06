@@ -1,3 +1,26 @@
+To use NAPT with lwip on an ESP32, just replace the lwIP library from the 
+lwIP component of the ESP-IDF with this one. This can be done by following 
+these steps:
+
+- Get this lib: git clone https://github.com/martin-ger/esp-lwip.git
+- Rename or delete original lwIP library folder (/esp-idf/component/lwip/lwip)
+- Copy the lwIP library with NAT repository folder from step 1 to 
+  /esp-idf/component/lwip and rename it to lwip.
+
+Now if you build a project with the ESP-IDF it will use the lwIP library 
+with NAT.
+
+In order for the NAT feature to work the option "Enable copy between Layer2 
+and Layer3 packets" must be enabled in the ESP-IDF project configuration. 
+An ESP-IDF project can be configured by calling make menuconfig 
+(or idf.py menuconfig for CMake setups). In the configuration go to 
+Component config -> LWIP.
+
+In the code of your firmware enable NAPT for the softAP interface by calling 
+the ip_napt_enable function from lwipt_napt.h header file.
+
+---
+
 INTRODUCTION
 
 lwIP is a small independent implementation of the TCP/IP protocol suite.
