@@ -1,3 +1,5 @@
+*Obsolete - NAPT ist now included in Espressif's esp-lwip*
+
 To use NAPT with lwip on an ESP32, just replace the lwIP library from the 
 lwIP component of the ESP-IDF with this one. This can be done by following 
 these steps:
