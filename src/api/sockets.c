@@ -2648,7 +2648,7 @@ static void select_check_waiters(int s, int has_recvevent, int has_sendevent, in
 #if ESP_LWIP_SELECT
   struct lwip_sock *sock = sock_select;
 #else  
-  struct lwip_sock *sock
+  struct lwip_sock *sock;
 #endif /* ESP_LWIP_LOCK */ 
 #if !LWIP_TCPIP_CORE_LOCKING
   int last_select_cb_ctr;
